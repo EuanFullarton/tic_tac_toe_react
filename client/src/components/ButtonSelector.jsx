@@ -28,20 +28,27 @@ class ButtonSelector extends React.Component {
   gameOver(){
     
     const row1 = document.getElementsByClassName('row1')
+    const row2 = document.getElementsByClassName('row2')
+    const row3 = document.getElementsByClassName('row3')
 
-      if ( (row1[0].innerText === '-') || (row1[1].innerText === '-') || (row1[2].innerText === '-')) {
-        return
+      if (( (row1[0].innerText === '-') || (row1[1].innerText === '-') || (row1[2].innerText === '-')) && 
+         ( (row2[0].innerText === '-') || (row2[1].innerText === '-') || (row2[2].innerText === '-')) &&
+         ( (row3[0].innerText === '-') || (row3[1].innerText === '-') || (row3[2].innerText === '-'))) {
+          return
       }
-      else if (row1[0].innerText && row1[1].innerText && row1[2].innerText){
-        console.log('winner!');
+      
+      else if ((row1[0].innerText === row1[1].innerText) && (row1[1].innerText === row1[2].innerText)){
+        console.log('winner row1!');
+      }
+      else if ((row2[0].innerText === row2[1].innerText) && (row2[1].innerText === row2[2].innerText)){
+        console.log('winner row2!');
+        }
+      else if ((row3[0].innerText === row3[1].innerText) && (row3[1].innerText === row3[2].innerText)){
+        console.log('winner row3!');
       }
       else{
         return
       }
-
-    
-
-
   }
 
   buttonClicked(event){
