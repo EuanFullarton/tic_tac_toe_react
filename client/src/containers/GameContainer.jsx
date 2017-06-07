@@ -5,7 +5,6 @@ class GameContainer extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      //tbc
     };
     this.setSelectedButton = this.setSelectedButton.bind(this);
   }
