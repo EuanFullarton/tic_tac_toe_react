@@ -9,17 +9,21 @@ class ButtonSelector extends React.Component {
   render(){
     return (
       <div id='grid'>
-      <button>Test button</button>
-      <button>Test button</button>
-      <button>Test button</button>
-      <button>Test button</button>
-      <button>Test button</button>
-      <button>Test button</button>
-      <button>Test button</button>
-      <button>Test button</button>
-      <button>Test button</button>
+      <button onClick={this.buttonClicked}>Test button</button>
+      <button onClick={this.buttonClicked}>Test button</button>
+      <button onClick={this.buttonClicked}>Test button</button>
+      <button onClick={this.buttonClicked}>Test button</button>
+      <button onClick={this.buttonClicked}>Test button</button>
+      <button onClick={this.buttonClicked}>Test button</button>
+      <button onClick={this.buttonClicked}>Test button</button>
+      <button onClick={this.buttonClicked}>Test button</button>
+      <button onClick={this.buttonClicked}>Test button</button>
       </div>
       )
+  }
+
+  buttonClicked(){
+    console.log('button has been clicked');
   }
 
 }
