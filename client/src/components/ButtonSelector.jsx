@@ -12,17 +12,36 @@ class ButtonSelector extends React.Component {
   render(){
     return (
       <div id='grid'>
-      <button id='1' onClick={this.buttonClicked} value={this.state.clicks}>-</button>
-      <button id='2' onClick={this.buttonClicked} value={this.state.clicks}>-</button>
-      <button id='3' onClick={this.buttonClicked} value={this.state.clicks}>-</button>
-      <button id='4' onClick={this.buttonClicked} value={this.state.clicks}>-</button>
-      <button id='5' onClick={this.buttonClicked} value={this.state.clicks}>-</button>
-      <button id='6' onClick={this.buttonClicked} value={this.state.clicks}>-</button>
-      <button id='7' onClick={this.buttonClicked} value={this.state.clicks}>-</button>
-      <button id='8' onClick={this.buttonClicked} value={this.state.clicks}>-</button>
-      <button id='9' onClick={this.buttonClicked} value={this.state.clicks}>-</button>
+      <button id='1' className='row1 col1' onClick={this.buttonClicked} value={this.state.clicks}>-</button>
+      <button id='2' className='row1 col2' onClick={this.buttonClicked} value={this.state.clicks}>-</button>
+      <button id='3' className='row1 col3' onClick={this.buttonClicked} value={this.state.clicks}>-</button>
+      <button id='4' className='row2 col1' onClick={this.buttonClicked} value={this.state.clicks}>-</button>
+      <button id='5' className='row2 col2' onClick={this.buttonClicked} value={this.state.clicks}>-</button>
+      <button id='6' className='row2 col3' onClick={this.buttonClicked} value={this.state.clicks}>-</button>
+      <button id='7' className='row3 col1' onClick={this.buttonClicked} value={this.state.clicks}>-</button>
+      <button id='8' className='row3 col2' onClick={this.buttonClicked} value={this.state.clicks}>-</button>
+      <button id='9' className='row3 col3' onClick={this.buttonClicked} value={this.state.clicks}>-</button>
       </div>
       )
+  }
+
+  gameOver(){
+    
+    const row1 = document.getElementsByClassName('row1')
+
+      if ( (row1[0].innerText === '-') || (row1[1].innerText === '-') || (row1[2].innerText === '-')) {
+        return
+      }
+      else if (row1[0].innerText && row1[1].innerText && row1[2].innerText){
+        console.log('winner!');
+      }
+      else{
+        return
+      }
+
+    
+
+
   }
 
   buttonClicked(event){
@@ -51,6 +70,9 @@ class ButtonSelector extends React.Component {
     const numberOfClicks = parseInt(event.target.value);
     this.setState({clicks: (numberOfClicks + 1)});
     console.log('state: ', this.state.clicks);
+
+    this.gameOver();    
+
     
   }
 
