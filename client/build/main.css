@@ -1,0 +1,13 @@
+h2{
+  text-align: center;
+}
+
+button{
+  height:15em;
+  width:30%;
+}
+
+#grid{
+  width:50%;
+  margin:auto;
+}
