@@ -31,9 +31,17 @@ class ButtonSelector extends React.Component {
     const row2 = document.getElementsByClassName('row2')
     const row3 = document.getElementsByClassName('row3')
 
+    const col1 = document.getElementsByClassName('col1')
+    const col2 = document.getElementsByClassName('col2')
+    const col3 = document.getElementsByClassName('col3')
+
       if (( (row1[0].innerText === '-') || (row1[1].innerText === '-') || (row1[2].innerText === '-')) && 
          ( (row2[0].innerText === '-') || (row2[1].innerText === '-') || (row2[2].innerText === '-')) &&
-         ( (row3[0].innerText === '-') || (row3[1].innerText === '-') || (row3[2].innerText === '-'))) {
+         ( (row3[0].innerText === '-') || (row3[1].innerText === '-') || (row3[2].innerText === '-')) &&
+         ( (col1[0].innerText === '-') || (col1[1].innerText === '-') || (col1[2].innerText === '-')) && 
+         ( (col2[0].innerText === '-') || (col2[1].innerText === '-') || (col2[2].innerText === '-')) &&
+         ( (col3[0].innerText === '-') || (col3[1].innerText === '-') || (col3[2].innerText === '-'))) 
+      {
           return
       }
       
@@ -45,6 +53,16 @@ class ButtonSelector extends React.Component {
         }
       else if ((row3[0].innerText === row3[1].innerText) && (row3[1].innerText === row3[2].innerText)){
         console.log('winner row3!');
+      }
+      
+      else if ((col1[0].innerText === col1[1].innerText) && (col1[1].innerText === col1[2].innerText)){
+        console.log('winner col1!');
+      }
+      else if ((col2[0].innerText === col2[1].innerText) && (col2[1].innerText === col2[2].innerText)){
+        console.log('winner col2!');
+        }
+      else if ((col3[0].innerText === col3[1].innerText) && (col3[1].innerText === col3[2].innerText)){
+        console.log('winner col3!');
       }
       else{
         return
